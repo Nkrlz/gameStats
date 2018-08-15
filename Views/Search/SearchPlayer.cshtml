@@ -1,0 +1,29 @@
+@model IEnumerable<gameStats.Models.Players>
+
+<h2>Player</h2>
+
+    <h4>Stats</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nickname)</th>
+            <th>@Html.DisplayNameFor(model => model.Distance)</th>
+            <th>@Html.DisplayNameFor(model => model.Shots)</th>                
+            <th>@Html.DisplayNameFor(model => model.Hits)</th>
+        </tr>
+    </thead>
+    <tbody>
+   @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Nickname)</td>
+            <td>@Html.DisplayFor(modelItem => item.Distance)</td>
+            <td>@Html.DisplayFor(modelItem => item.Shots)</td>
+            <td>@Html.DisplayFor(modelItem => item.Hits)</td>
+        </tr>
+   }
+   </tbody>
+</table>
+ <form asp-action="SearchHome" method="get">
+    <input type="submit" value="Go Back">
+    </form>
